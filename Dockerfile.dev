@@ -1,0 +1,12 @@
+# base image
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+# copy all of the files and folders in the current directory to the WORKDIR in this docker image
+COPY . .
+
+CMD ["npm", "run", "start"]
