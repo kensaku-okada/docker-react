@@ -13,7 +13,7 @@ before_install:
 script:
   # command necessary to run the test suite
   # -- --coverage: returning the test result and (important) automatically finish the test mode
-  - docer run kensakuokada/docker-react npm run test -- --coverage
+  - docker run kensakuokada/docker-react npm run test -- --coverage
 
 
 
