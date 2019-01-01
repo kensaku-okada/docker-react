@@ -13,6 +13,8 @@ RUN npm run build
 
 # run phase
 FROM nginx
+#open the port number for browser
+EXPOSE 80
 # copy over something from the other phase we are just working on
 # source of destination path: https://hub.docker.com/_/nginx/
 COPY --from=builder /app/build /usr/share/nginx/html
