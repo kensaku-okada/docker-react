@@ -28,7 +28,7 @@ deploy:
   # set api keys of AWS (encrypted by travis CI)
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+    secure: $AWS_SECRET_KEY
 
 
 
