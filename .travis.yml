@@ -15,5 +15,20 @@ script:
   # -- --coverage: returning the test result and (important) automatically finish the test mode
   - docker run kensakuokada/docker-react npm run test -- --coverage
 
+deploy:
+  provider: elesticbeanstalk
+  region: "eu-west-1"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-eu-west-1-805857961942"
+  bucket_path: "docker-react"
+  # we deploy only when we deploy new code to master branch
+  on:
+    branch: master
+  # set api keys of AWS (encrypted by travis CI)
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
 
 
