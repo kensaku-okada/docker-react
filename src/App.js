@@ -19,7 +19,7 @@ class App extends Component {
           >
             Learn React (Hi there2!!!)
           </a>
-          Hi there2-9!!!
+          AWS deployed. feature branch made.
         </header>
       </div>
     );
