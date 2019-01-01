@@ -1,0 +1,19 @@
+# super user level permission
+sudo: required
+service:
+  # make travils CI understand that we need docker CLI installed. then travis CI automatically install docker
+  - docker
+
+
+before_install:
+  # build docker image before the test running
+  # kensakuokada/docker-react == tag name of the future image. kensakuokada == docker user name. docker-react == github repository name
+  - docker build -t kensakuokada/docker-react -f Dockerfile.dev .
+
+script:
+  # command necessary to run the test suite
+  # -- --coverage: returning the test result and (important) automatically finish the test mode
+  - docer run kensakuokada/docker-react npm run test -- --coverage
+
+
+
